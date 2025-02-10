@@ -1,0 +1,306 @@
+/* General */
+/* Table Styles */
+table {
+  border: 1px solid #000;
+  width: 100%;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #00cc44;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
+
+.logo-image {
+  max-width: 100%; /* Make logo responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.menu-toggle {
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav {
+  display: none;
+  flex-direction: column;
+  background-color: #000;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 0.5rem;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav.active {
+  display: flex;
+  transform: translateY(0);
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li {
+  margin: 0.5rem 0;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  display: block;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  background-color: #007bff;
+}
+
+/* Enlaces de auth (Registrarse e Iniciar sesión) */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.auth-link:hover {
+  background-color: #0056b3;
+}
+
+/* Main content */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.highlight h1 {
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.highlight .subtitle {
+  font-size: 3vw;
+  margin-top: 1rem;
+}
+
+.features {
+  font-size: 2.5vw;
+  max-width: 900px;
+  line-height: 1.6;
+  margin-top: 2rem;
+  text-align: center;
+  padding-bottom: 1rem; /* Ajusta el padding para que esté más compacto */
+}
+
+.features h2 {
+  font-size: 3vw;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* Media Queries */
+
+/* En dispositivos móviles (hasta 767px) */
+@media (max-width: 767px) {
+  .logo-text {
+    font-size: 1.75rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main {
+    padding: 3rem;
+  }
+
+  .highlight h1 {
+    font-size: 12vw;
+  }
+
+  .highlight .subtitle {
+    font-size: 6vw;
+  }
+
+  .features {
+    font-size: 4vw;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}
+
+/* En tabletas (más de 768px) */
+@media (min-width: 768px) {
+  .logo-text {
+    font-size: 3rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main {
+    padding: 4rem;
+  }
+
+  .highlight h1 {
+    font-size: 8vw;
+  }
+
+  .highlight .subtitle {
+    font-size: 4vw;
+  }
+
+  .features {
+    font-size: 2.5vw;
+  }
+
+  footer {
+    padding: 1.5rem;
+  }
+}
+
+/* En pantallas grandes (más de 1024px) */
+@media (min-width: 1024px) {
+  .logo-text {
+    font-size: 3.5rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .auth-buttons {
+    display: flex;
+    gap: 3rem;
+  }
+
+  /* Layout con dos columnas en pantallas grandes */
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    padding: 3rem; /* Ajuste de padding */
+    width: 100%;
+    max-height: 80vh;
+    overflow: hidden;
+  }
+
+  .highlight h1 {
+    font-size: 6vw;
+  }
+
+  .highlight .subtitle {
+    font-size: 3.5vw;
+  }
+
+  .features {
+    font-size: 1.8vw; /* Reducir el tamaño de la fuente de features */
+    max-width: 500px; /* Controlando el tamaño de features */
+    line-height: 1.4; /* Reduce el espacio entre líneas */
+    text-align: left;
+    margin-top: 0;
+    padding-bottom: 0.5rem; /* Menos espacio al final */
+  }
+
+footer {
+  padding: 2rem;
+}
+}
